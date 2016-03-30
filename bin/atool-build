@@ -13,3 +13,4 @@ program
   .parse(process.argv);
 
 require('../lib/build')(program);
+require('atool-monitor').emit();
