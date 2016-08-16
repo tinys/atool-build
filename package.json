@@ -1,6 +1,6 @@
 {
   "name": "ljtool-build",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build tool based on webpack",
   "repository": {
     "type": "git",
@@ -53,7 +53,7 @@
     "ts-loader": "~0.8.2",
     "typescript": "~1.8.10",
     "url-loader": "~0.5.6",
-    "webpack": "~^2.1.0-beta.6"
+    "webpack": "^2.1.0-beta.6"
   },
   "devDependencies": {
     "babel-cli": "^6.7.5",
