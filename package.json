@@ -1,6 +1,6 @@
 {
-  "name": "atool-build",
-  "version": "0.8.0",
+  "name": "ljtool-build",
+  "version": "1.0.0",
   "description": "Build tool based on webpack",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   "author": "chencheng <sorrycc@gmail.com>",
   "license": "MIT",
   "bin": {
-    "atool-build": "./bin/atool-build"
+    "ljtool-build": "./bin/atool-build"
   },
   "files": [
     "bin",
