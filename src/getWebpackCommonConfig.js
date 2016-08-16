@@ -107,15 +107,18 @@ export default function getWebpackCommonConfig(args) {
             return /\.css$/.test(filePath) && !/\.module\.css$/.test(filePath);
           },
           loader: ExtractTextPlugin.extract(
-            'css?sourceMap&-restructuring!' +
-            'postcss'
+            {
+              loader:'css?sourceMap&-restructuring!' +'postcss'
+            }
           ),
         },
         {
           test: /\.module\.css$/,
           loader: ExtractTextPlugin.extract(
-            'css?sourceMap&-restructuring&modules&localIdentName=[local]___[hash:base64:5]!' +
+            {
+              loader:'css?sourceMap&-restructuring&modules&localIdentName=[local]___[hash:base64:5]!' +
             'postcss'
+            }
           ),
         },
         {
@@ -123,17 +126,21 @@ export default function getWebpackCommonConfig(args) {
             return /\.less$/.test(filePath) && !/\.module\.less$/.test(filePath);
           },
           loader: ExtractTextPlugin.extract(
-            'css?sourceMap!' +
+            {
+              loader:'css?sourceMap!' +
             'postcss!' +
             `less-loader?{"sourceMap":true,"modifyVars":${JSON.stringify(theme)}}`
+            }
           ),
         },
         {
           test: /\.module\.less$/,
           loader: ExtractTextPlugin.extract(
-            'css?sourceMap&modules&localIdentName=[local]___[hash:base64:5]!!' +
+            {
+              loader:'css?sourceMap&modules&localIdentName=[local]___[hash:base64:5]!!' +
             'postcss!' +
             `less-loader?{"sourceMap":true,"modifyVars":${JSON.stringify(theme)}}`
+            }
           ),
         },
         { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&minetype=application/font-woff' },
@@ -155,12 +162,16 @@ export default function getWebpackCommonConfig(args) {
     ],
 
     plugins: [
-      new webpack.optimize.CommonsChunkPlugin('common', commonName),
-      new ExtractTextPlugin(cssFileName, {
+        new webpack.optimize.CommonsChunkPlugin({
+        name:'common', 
+        filename:commonName
+      }),
+      new ExtractTextPlugin({
+        filename:cssFileName,
         disable: false,
         allChunks: true,
       }),
-      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.OccurrenceOrderPlugin(),
     ],
   };
 }

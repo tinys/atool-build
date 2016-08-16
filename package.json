@@ -1,6 +1,6 @@
 {
   "name": "ljtool-build",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Build tool based on webpack",
   "repository": {
     "type": "git",
@@ -40,7 +40,7 @@
     "chalk": "^1.1.1",
     "commander": "~2.9.0",
     "css-loader": "~0.23.0",
-    "extract-text-webpack-plugin": "~1.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.2",
     "file-loader": "~0.8.4",
     "json-loader": "~0.5.4",
     "less": "~2.6.0",
