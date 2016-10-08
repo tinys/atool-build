@@ -108,7 +108,7 @@ export default function getWebpackCommonConfig(args) {
           },
           loader: ExtractTextPlugin.extract(
             {
-              loader:'css?sourceMap&-restructuring!' +'postcss'
+              loader: 'css?sourceMap&-restructuring!' +'postcss'
             }
           ),
         },
@@ -116,7 +116,7 @@ export default function getWebpackCommonConfig(args) {
           test: /\.module\.css$/,
           loader: ExtractTextPlugin.extract(
             {
-              loader:'css?sourceMap&-restructuring&modules&localIdentName=[local]___[hash:base64:5]!' +
+              loader: 'css?sourceMap&-restructuring&modules&localIdentName=[local]___[hash:base64:5]!' +
             'postcss'
             }
           ),
@@ -163,7 +163,7 @@ export default function getWebpackCommonConfig(args) {
 
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-        name:'common', 
+        name:'common',
         filename:commonName
       }),
       new ExtractTextPlugin({
